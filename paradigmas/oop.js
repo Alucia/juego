@@ -11,15 +11,22 @@ Note.prototype.toString = function () {
   return str;
 };
 
-
 function Notes() {
   this.data = [];
 }
 
 Notes.prototype.add = function (note) {
-  //...
+  if(note instanceof Note){
+    this.data.unshift(note);
+  }else{
+    throw "error";
+  }
 };
 
-Notes.prototype.toString = function () {
-  //...
+Notes.prototype.toString = function (notes) {
+  for ( var i = 0; i < notes.length ; i++){
+    console.log(note.toString() + '\n' + );
+  }
 };
+
+module.exports = {'Notes' : Notes ; 'node' : node};
