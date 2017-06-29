@@ -1,9 +1,26 @@
-function analu(map,x,y){
+
+function Analu(map,x,y){
 	Hero.call(this,map, x, y);
+	this.name = "Analu";
+	this.voice = "Google UK English Female";
 }
 
-analu.prototype = Object.create(Hero.prototype);
-analu.prototype.constructor = analu;
+Analu.prototype = Object.create(Hero.prototype);
+Analu.prototype.constructor = Analu;
 
 
-analu.prototype.image = 'characters/analu/analu.png';
+Analu.prototype.image = 'characters/analu/analu.png';
+
+Analu.prototype.say = function(){
+	const voice = this.voice;
+	const speech = new SpeechSynthesisUtterance();
+
+	this.getVoices(function(voices){
+		speech.text = 'Hola, me llamo ' + this.name ;
+		speech.voice = voices.find(function(item){
+			return item.name === voice;
+		});
+		speechSynthesis.speak(speech);
+	}.bind(this));
+};
+  

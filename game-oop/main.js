@@ -7,11 +7,11 @@ window.addEventListener('load', function () {
     new ExampleMap1(),
     new ExampleMap2()
   ], [
-    KnightHero
+  	Analu
+    //KnightHero
     //Hero
   ]);
 
   game.appendTo(document.body);
   game.run();
-
 });

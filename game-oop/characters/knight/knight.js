@@ -1,3 +1,4 @@
+
 function KnightHero(map, x, y) {
   Hero.call(this, map, x, y);
 }
